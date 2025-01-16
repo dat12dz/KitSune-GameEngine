@@ -29,9 +29,11 @@
     <ClCompile Include="OpenGlEngine\vendor\glad\src\glad_wgl.c" />
     <ClCompile Include="OpenGlEngine\source\OGL3D\Graphic\OVertexArrayObject.cpp" />
     <ClCompile Include="OpenGlEngine\source\OGL3D\Graphic\OShaderProgram.cpp" />
+    <ClCompile Include="OpenGlEngine\source\OGL3D\Graphic\OUniformBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGlEngine\include\OGL3D\Game\Win32\OWin32Game.h" />
+    <ClInclude Include="OpenGlEngine\include\OGL3D\Graphic\OUniformBuffer.h" />
     <ClInclude Include="OpenGlEngine\include\OGL3D\Graphic\Win32\CWin32GraphicEngine.h" />
     <ClInclude Include="OpenGlEngine\include\OGL3D\Math\ORect.h" />
     <ClInclude Include="OpenGlEngine\include\OGL3D\Math\OVec4.h" />

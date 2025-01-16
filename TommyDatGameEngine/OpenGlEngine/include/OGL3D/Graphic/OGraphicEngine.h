@@ -13,9 +13,11 @@ class OGraphicEngine
 	void SetViewPort(const Orect& size);
 	void setVertextArrayObj(const OVertexArrayObjectPtr& vao);
 	void SetShaderProgram(const OShaderProgramPtr& program);
-	void DrawTriangle(uint vertCount, uint offset);
+	void DrawTriangle(const OTriangleType& triType, uint vertCount, uint offset);
+	void SetUniformBuffer(const OUniformBufferPtr& buffer, uint slot);
 
 	OVertexArrayObjectPtr createVertexArrayObject(const OVertexBufferDesc& buffer);
 	OShaderProgramPtr createShaderProgram(const OShaderProgramDesc& desc);
+	OUniformBufferPtr createUniformBuffer(const OUniformBufferDesc& desc);
 };
 

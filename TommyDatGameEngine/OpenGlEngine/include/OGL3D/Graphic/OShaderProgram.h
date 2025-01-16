@@ -5,6 +5,7 @@ public:
 	OShaderProgram(const OShaderProgramDesc& desc);
 	~OShaderProgram();
 	uint getID();
+	void SetUniformBufferSlot(const char* name, uint slot);
 private:
 	void attach(const wchar_t* shaderPath,const OShaderType& type);
 	void link();

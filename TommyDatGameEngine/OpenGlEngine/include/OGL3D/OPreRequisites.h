@@ -10,12 +10,18 @@ typedef unsigned int uint;
 
 class OVertexArrayObject;
 class OShaderProgram;
+class OUniformBuffer;
+typedef std::shared_ptr<OUniformBuffer> OUniformBufferPtr;
 typedef std::shared_ptr<OVertexArrayObject> OVertexArrayObjectPtr;
 typedef std::shared_ptr<OShaderProgram> OShaderProgramPtr;
 struct OVertexAtrribute
 {
 	uint numElm = 0;
 
+};
+struct OUniformBufferDesc
+{
+	uint size;
 };
 struct OVertexBufferDesc
 {
@@ -31,7 +37,11 @@ struct OShaderProgramDesc
 	const wchar_t* vertexShaderPath;
 	const wchar_t* fragmentShaderPath;
 };
-
+enum OTriangleType
+{
+	TriangleList = 0, // this mode require 6 vertices to draw a rectangle
+	TriangleStrip = 1,// this mode require 4 vertices to draw a rectangle
+};
 enum OShaderType
 {
 	VertexShader = 0,

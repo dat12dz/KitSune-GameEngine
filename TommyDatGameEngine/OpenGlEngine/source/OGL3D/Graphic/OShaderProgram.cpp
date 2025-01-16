@@ -28,6 +28,13 @@ uint OShaderProgram::getID()
 	return m_programId;
 }
 
+void OShaderProgram::SetUniformBufferSlot(const char* name, uint slot)
+{
+	uint id = glGetUniformBlockIndex(m_programId, name);
+	glUniformBlockBinding(m_programId, id, slot);
+	
+}
+
 void OShaderProgram::attach(const wchar_t* shaderPath, const OShaderType& type)
 {
 	std::string shaderCode;

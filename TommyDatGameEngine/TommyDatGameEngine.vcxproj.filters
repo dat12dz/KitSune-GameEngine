@@ -45,6 +45,9 @@
     <ClCompile Include="OpenGlEngine\source\OGL3D\Graphic\OShaderProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="OpenGlEngine\source\OGL3D\Graphic\OUniformBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OpenGlEngine\include\OGL3D\Windows\OWindow.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OpenGlEngine\include\OGL3D\Graphic\OShaderProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGlEngine\include\OGL3D\Graphic\OUniformBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

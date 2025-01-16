@@ -7,6 +7,7 @@
 #include <OGL3D/Math/ORect.h>
 #include <OGL3D/Graphic/OVertexArrayObject.h>.
 #include <OGL3D/Graphic/OShaderProgram.h>
+#include <OGL3D/Graphic/OUniformBuffer.h>
 void OGraphicEngine::clear(const OVec4& color)
 {
 	glClearColor(color.x, color.y, color.z, color.w);
@@ -30,12 +31,31 @@ OShaderProgramPtr OGraphicEngine::createShaderProgram(const OShaderProgramDesc& 
 {
 	return std::make_shared<OShaderProgram>(desc);
 }
+OUniformBufferPtr OGraphicEngine::createUniformBuffer(const OUniformBufferDesc& desc)
+{
+	return std::make_shared<OUniformBuffer>(desc);
+}
 void OGraphicEngine::SetShaderProgram(const OShaderProgramPtr& program)
 {
 	glUseProgram(program->getID());
 }
-void OGraphicEngine::DrawTriangle(uint vertCount, uint offset)
+void OGraphicEngine::DrawTriangle(const OTriangleType& triType,uint vertCount, uint offset)
 {
-	glDrawArrays(GL_TRIANGLES, offset, vertCount);
+	auto glTriType = GL_TRIANGLES;
+	if (triType == TriangleList)
+	{
+		glTriType = GL_TRIANGLES;
+	}
+	else if (triType == TriangleStrip)
+	{
+		glTriType = GL_TRIANGLE_STRIP;
+	}
+	glDrawArrays(glTriType, offset, vertCount);
+
+}
+
+void OGraphicEngine::SetUniformBuffer(const OUniformBufferPtr& buffer, uint slot)
+{
+	glBindBufferBase(GL_UNIFORM_BUFFER, slot, buffer->GetID());
 }
 
